@@ -1,5 +1,14 @@
 {
   "expo": {
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Selecct and upload images.",
+          "cameraPermission": "Allow mobileApp to access your camera."
+        }
+      ]
+    ],
     "name": "mobileApp",
     "slug": "mobileApp",
     "version": "1.0.0",

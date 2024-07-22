@@ -1,20 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { AuthProvider } from './context/AuthContext';
+import AppDrawerNavigation from './navigation/AppDrawerNavigation';
+
+// function Demo() {
+//   const insets = useSafeAreaInsets();
+//   return (
+//     <LinearGradient
+//       colors={['rgba(255, 145, 193, 1)', 'rgba(255, 228, 88, 1)']}
+//       style={styles(insets).container}
+//     >
+//       <ScrollView style={styles(insets).container}>
+//         <Text>Open up App.js to start workig on yorftyjcsgkfjcguk</Text>
+//         <Text>Open up App.js to start workig on yorftyjcsgkfjcguk</Text>
+//         <Text>Open up App.js to start workig on yorftyjcsgkfjcguk</Text>
+//         <StatusBar style="auto" />
+//       </ScrollView>
+//     </LinearGradient>
+//   );
+// }
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      <AuthProvider>
+        <AppDrawerNavigation />
+      </AuthProvider>
+    </SafeAreaProvider >
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
